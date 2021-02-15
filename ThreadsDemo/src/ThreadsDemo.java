@@ -5,9 +5,12 @@ public class ThreadsDemo {
 		ThreadsExtend myThreadA = new ThreadsExtend("A");
 		ThreadsExtend myThreadB = new ThreadsExtend("B");
 		ThreadsExtend myThreadC = new ThreadsExtend("C");
+		Runnable myRunnableD = new ThreadsInterface("D");
 		myThreadA.start();
 		myThreadB.start();
 		myThreadC.start();
+		Thread  myThreadD = new Thread( myRunnableD );
+		myThreadD.start();
 		
 		try {
 			myThreadA.join();
