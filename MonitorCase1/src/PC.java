@@ -14,6 +14,15 @@ public class PC {
 
 		p.start();
 		c.start();
+		
+		try {
+			p.join();
+			c.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("End");
 	}
 
 }
