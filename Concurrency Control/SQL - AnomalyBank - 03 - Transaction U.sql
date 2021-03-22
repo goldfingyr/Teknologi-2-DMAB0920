@@ -10,7 +10,7 @@
 --
 -- Distributed Systems, Concepts and Design, page 526, Figure 13.11
 -- The Dirty Read, Transaction U
--- Start this script first and the othe no later than 5 secs after
+-- Start this script no later than 5 secs after the first one
 -- +---------------------------------+---------------------------------+
 -- |      Transaction T              |     Transaction U               |
 -- +---------------------------------+---------------------------------+

@@ -10,7 +10,7 @@
 --
 -- Distributed Systems, Concepts and Design, page 526, Figure 13.11
 -- The Dirty Read, Transaction T
--- Start this script first and the othe no later than 5 secs after
+-- Start this script first and the other no later than 5 secs after
 -- +---------------------------------+---------------------------------+
 -- |      Transaction T              |     Transaction U               |
 -- +---------------------------------+---------------------------------+
@@ -37,7 +37,7 @@
 USE AnomalyBank
 -- CHOOSE ONE OF THE FOLLOWING BY UNCOMMENTING
 --SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
-SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+--SET TRANSACTION ISOLATION LEVEL READ COMMITTED
 --SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
 --SET TRANSACTION ISOLATION LEVEL SNAPSHOT
 --SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
@@ -97,7 +97,7 @@ END
 
 
 
-PRINT 'Customer a should show a balance of 120 and not 130'
+PRINT 'Customer a should show a balance of 100'
 SELECT @Balance=Balance FROM Accounts WHERE Customer='a';
 PRINT @Balance
 USE master
