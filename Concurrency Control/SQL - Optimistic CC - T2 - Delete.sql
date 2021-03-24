@@ -6,8 +6,7 @@
 -- Delete performed during OCC
 
 
-DELETE FROM Optimistic
-WHERE partid = 1
+DELETE FROM Optimistic WHERE partid = 1
 GO
 
 USE master

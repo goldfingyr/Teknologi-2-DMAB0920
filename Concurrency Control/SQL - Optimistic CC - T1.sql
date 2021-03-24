@@ -14,8 +14,7 @@ rowid ROWVERSION not null
 )
 go
 
-insert into Optimistic (partname, sku)
-SELECT 'Widget', 'default sku'
+INSERT INTO Optimistic (partname, sku) VALUES ('Widget', 'default sku')
 GO
 
 -- Starting the show
@@ -28,7 +27,9 @@ WHERE partid = 1
 -- wait 30 seconds to simulate
 -- a user examining the row and
 -- making a data modification
+RAISERROR( 'Sleeping...',0,1) WITH NOWAIT
 WAITFOR DELAY '00:00:10'
+RAISERROR( 'Sleeping... Done',0,1) WITH NOWAIT
 
 
 UPDATE Optimistic
@@ -39,12 +40,12 @@ AND rowid = @rowid
 IF @@rowcount = 0
 BEGIN
       IF NOT EXISTS (select 1 from Optimistic where partid = 1)
-          PRINT 'this row was deleted by another user'
+		  RAISERROR( 'this row was deleted by another user!',0,1) WITH NOWAIT
       ELSE
-          PRINT 'this row was updated by another user.'
+		  RAISERROR( 'this row was updated by another user!',0,1) WITH NOWAIT
 END
 ELSE
-  PRINT 'this row was updated by by me.'
+  RAISERROR( 'this row was updated by by me.',0,1) WITH NOWAIT
 go
 
 USE master

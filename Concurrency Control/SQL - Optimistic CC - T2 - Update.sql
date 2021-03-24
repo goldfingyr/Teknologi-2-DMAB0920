@@ -7,8 +7,7 @@
 
 
 UPDATE Optimistic
-SET sku = 'connection 2: updated'
-WHERE partid = 1
+SET sku = 'connection 2: updated' WHERE partid = 1
 GO
 
 USE master
