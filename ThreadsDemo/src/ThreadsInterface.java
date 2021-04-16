@@ -9,7 +9,7 @@ public class ThreadsInterface  implements Runnable {
 	
 	@Override
 	public void run() {
-		System.out.println(MyString + "Interface");
+		System.out.println(MyString + " Interface");
 	}
 
 }

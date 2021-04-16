@@ -6,11 +6,14 @@ public class ThreadsDemo {
 		ThreadsExtend myThreadB = new ThreadsExtend("B");
 		ThreadsExtend myThreadC = new ThreadsExtend("C");
 		Runnable myRunnableD = new ThreadsInterface("D");
+		Runnable myRunnableE = new ThreadsInterface("E");
 		myThreadA.start();
 		myThreadB.start();
 		myThreadC.start();
 		Thread  myThreadD = new Thread( myRunnableD );
 		myThreadD.start();
+		Thread myThreadE = new Thread( myRunnableE );
+		myThreadE.start();
 		
 		try {
 			myThreadA.join();
