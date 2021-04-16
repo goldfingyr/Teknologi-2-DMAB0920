@@ -7,6 +7,7 @@ public class ThreadsDemo {
 		ThreadsExtend myThreadC = new ThreadsExtend("C");
 		Runnable myRunnableD = new ThreadsInterface("D");
 		Runnable myRunnableE = new ThreadsInterface("E");
+		Runnable myRunnableF = new Level1Interface("F");
 		myThreadA.start();
 		myThreadB.start();
 		myThreadC.start();
@@ -14,6 +15,8 @@ public class ThreadsDemo {
 		myThreadD.start();
 		Thread myThreadE = new Thread( myRunnableE );
 		myThreadE.start();
+		Thread myThreadF = new Thread( myRunnableF );
+		myThreadF.start();
 		
 		try {
 			myThreadA.join();
@@ -21,6 +24,7 @@ public class ThreadsDemo {
 			myThreadC.join();
 			myThreadD.join();
 			myThreadE.join();
+			myThreadF.join();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
