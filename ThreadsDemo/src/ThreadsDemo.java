@@ -19,9 +19,12 @@ public class ThreadsDemo {
 			myThreadA.join();
 			myThreadB.join();
 			myThreadC.join();
+			myThreadD.join();
+			myThreadE.join();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("Main Done...");
 	}
 }
